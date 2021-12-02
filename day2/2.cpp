@@ -1,10 +1,10 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <sstream>
 #include <vector>
 
 #include "../helpers/readlines.h"
+#include "../helpers/tokenise.h"
 #include "2.h"
 
 int main() {
@@ -13,7 +13,7 @@ int main() {
 }
 
 void part1() {
-    std::ofstream output("./day2/output", output.app | output.trunc);
+    std::ofstream output("./day2/output", output.app);
 
     std::vector<std::string> commands = readLines("./day2/input");
 
@@ -34,12 +34,11 @@ void part1() {
         }
     }
 
-    output << depth * hori << "\n";
     std::cout << depth * hori << "\n";
 }
 
 void part2() {
-    std::ofstream output("./day2/output", output.app | output.trunc);
+    std::ofstream output("./day2/output", output.app);
 
     std::vector<std::string> commands = readLines("./day2/input");
 
@@ -62,18 +61,6 @@ void part2() {
         }
     }
 
-    output << depth * hori << "\n";
     std::cout << depth * hori << "\n";
 }
 
-std::vector<std::string> tokenise(std::string command) {
-    std::vector<std::string> splitCommand {};
-    std::string currWord;
-    std::stringstream ss(command);
-
-    while (ss >> currWord) {
-        splitCommand.push_back(currWord);
-    }
-
-    return splitCommand;
-}
