@@ -12,7 +12,7 @@ int main() {
 }
 
 void part1() {
-    std::ofstream output("./day1/output", output.app | output.trunc);
+    std::ofstream output("./day1/output", output.app);
 
     std::vector<std::string> depths = readLines("./day1/input");
 
@@ -32,7 +32,7 @@ void part1() {
 }
 
 void part2() {
-    std::ofstream output("./day1/output", output.app | output.trunc);
+    std::ofstream output("./day1/output", output.app);
 
     std::vector<std::string> depths = readLines("./day1/input");
 
