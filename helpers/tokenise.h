@@ -1,4 +1,4 @@
 #include <string>
 #include <vector>
 
-std::vector<std::string> tokenise(std::string command);
+std::vector<std::string> tokenise(std::string command, char sep = ' ');

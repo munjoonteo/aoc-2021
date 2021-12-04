@@ -20,6 +20,12 @@ day3: day3.o readlines.o
 day3.o: day3/3.cpp day3/3.h helpers/readlines.cpp
 	$(CC) $(CFLAGS) -c day3/3.cpp helpers/readlines.cpp
 
+day4: day4.o readlines.o tokenise.o
+	$(CC) $(CFLAGS) -o day4_soln 4.o readlines.o tokenise.o
+
+day4.o: day4/4.cpp day4/4.h helpers/readlines.cpp helpers/tokenise.cpp
+	$(CC) $(CFLAGS) -c day4/4.cpp helpers/readlines.cpp helpers/tokenise.cpp
+
 readlines.o: helpers/readlines.h
 
 tokenise.o: helpers/tokenise.h

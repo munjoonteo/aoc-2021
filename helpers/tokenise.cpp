@@ -1,14 +1,15 @@
+#include <iostream>
 #include <sstream>
 #include <string>
 #include <vector>
 
-std::vector<std::string> tokenise(std::string command) {
+std::vector<std::string> tokenise(std::string command, char sep = ' ') {
     std::vector<std::string> splitCommand {};
     std::string currWord;
-    std::stringstream ss(command);
+    std::istringstream ss(command);
 
-    while (ss >> currWord) {
-        splitCommand.push_back(currWord);
+    while (std::getline(ss, currWord, sep)) {
+        if (currWord != "") splitCommand.push_back(currWord);
     }
 
     return splitCommand;
