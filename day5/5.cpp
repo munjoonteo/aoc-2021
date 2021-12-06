@@ -12,7 +12,7 @@ int main() {
     part2();
 }
 
-std::string const DELIM = " -> ";
+const std::string DELIM = " -> ";
 
 void part1() {
     std::ofstream output("./day5/output", output.app);
